@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sony.tennisscouting" >
+    <uses-permission android:name="com.sonymobile.smartwear.swr30.PERMISSION_CONTROL_EXTENSION"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <service
+            android:name="com.sonymobile.smartwear.swr30.ExtensionService"
+            android:exported="true"
+            android:permission="com.sonymobile.smartwear.swr30.PERMISSION_HOSTAPP" >
+
+            <!-- Intent filter used to find service to bind to. -->
+            <intent-filter>
+                <action android:name="com.sonymobile.smartwear.swr30.BIND" />
+            </intent-filter>
+            <meta-data
+                android:name="com.sonymobile.smartwear.swr30.configuration"
+                android:resource="@xml/swr30_specific_config" />
+        </service>
+        <activity
+            android:name=".TennisScoutingMainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.sonymobile.smartwear.swr30.CONFIGURE_CONTROL" />
+            </intent-filter>
+            <meta-data
+                android:name="com.sonymobile.smartwear.swr30.control_name"
+                android:value="@string/ST_CONTROL_PATH" />
+        </activity>
+    </application>
+
+</manifest>

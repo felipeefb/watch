@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2014 Sony Mobile Communications Inc.
+  ~ All rights, including trade secret rights, reserved.
+  -->
+<extension
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    custom:swr30ExtensionMinApiVersion="1">
+    <control
+        custom:swr30ControlLabel="@string/app_name"
+        custom:swr30ControlPreviewImage="@drawable/bg_landing_screen"
+        custom:swr30ControlName="@string/ST_CONTROL_PATH"
+        custom:swr30ControlSingleInstance="true"/>
+</extension>
